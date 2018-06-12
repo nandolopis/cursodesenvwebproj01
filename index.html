@@ -4,6 +4,8 @@
 		<meta charset="utf-8">
 		<title>Orlando City</title>
 		<link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="lib/owl-carousel/owl.carousel.css">
+		<link rel="stylesheet" href="lib/owl-carousel/owl.theme.css">
 		<link rel="stylesheet" href="css/orlando.css">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 	</head>
@@ -48,12 +50,12 @@
 				<div class="float-right">
 					<nav  id="menu">
 						<ul>
-							<li><a href="#">Tickets</a></li>
+							<li><a href="#call-to-action">Tickets</a></li>
 							<li><a href="#news">News</a></li>
 							<li><a href="#estatisticas">Schedule</a></li>
 							<li class="search">								
 								<div class="input-group mb-3">
-									<input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2">
+									<input id="input-search" type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2">
 									<div class="input-group-append">
 										<button class="btn btn-outline-secondary" type="button"><i class="fa fa-search"></i></button>
 									</div> <!-- /inputput-group-->
@@ -68,7 +70,7 @@
 		</header>
 
 		<section>
-			<div id="banner">
+			<div id="banner" >
 				<h1>Orlando City <small>Orlando City Soccer club</small></h1>
 			</div>
 
@@ -79,34 +81,48 @@
 						<hr>
 					</div>
 				</div>
-				<div class="row thumbnails">
-					<div class="col-md-3">
-						
-						<img src="img/noticia-thumb.jpg" alt="Noticia">
-						<h3>Orlando City Acquires Goalkeeper Joe Bendik from Toronto FC</h3>
-						<time>December 21, 2015</time>
-
+				<div class="row thumbnails owl-carousel owl-theme">
+					<div class="item">
+							<div class="item-inner">
+							<img src="img/noticia-thumb.jpg" alt="Noticia">
+							<h3>Orlando City Acquires Goalkeeper Joe Bendik from Toronto FC</h3>
+							<time>December 21, 2015</time>
+						</div>
 					</div>
-					<div class="col-md-3">
-						
-						<img src="img/noticia-thumb.jpg" alt="Noticia">
-						<h3>Orlando City Acquires Goalkeeper Joe Bendik from Toronto FC</h3>
-						<time>December 21, 2015</time>
-
+					<div class="item">
+						<div class="item-inner">
+							<img src="img/noticia-thumb.jpg" alt="Noticia">
+							<h3>Orlando City Acquires Goalkeeper Joe Bendik from Toronto FC</h3>
+							<time>December 21, 2015</time>
+						</div>
 					</div>
-					<div class="col-md-3">
-						
-						<img src="img/noticia-thumb.jpg" alt="Noticia">
-						<h3>Orlando City Acquires Goalkeeper Joe Bendik from Toronto FC</h3>
-						<time>December 21, 2015</time>
-
+					<div class="item">
+						<div class="item-inner">
+							<img src="img/noticia-thumb.jpg" alt="Noticia">
+							<h3>Orlando City Acquires Goalkeeper Joe Bendik from Toronto FC</h3>
+							<time>December 21, 2015</time>
+						</div>
 					</div>
-					<div class="col-md-3">
-						
-						<img src="img/noticia-thumb.jpg" alt="Noticia">
-						<h3>Orlando City Acquires Goalkeeper Joe Bendik from Toronto FC</h3>
-						<time>December 21, 2015</time>
-
+					<div class="item">
+						<div class="item-inner">	
+							<img src="img/noticia-thumb.jpg" alt="Noticia">
+							<h3>Orlando City Acquires Goalkeeper Joe Bendik from Toronto FC</h3>
+							<time>December 21, 2015</time>
+						</div>
+					</div>
+					<div class="item">
+						<div class="item-inner">	
+							<img src="img/noticia-thumb.jpg" alt="Noticia">
+							<h3>Orlando City Acquires Goalkeeper Joe Bendik from Toronto FC</h3>
+							<time>December 21, 2015</time>
+						</div>
+					</div>
+					<div class="item">
+						<div class="item-inner">	
+							<img src="img/noticia-thumb.jpg" alt="Noticia">
+							<h3>Orlando City Acquires Goalkeeper Joe Bendik from Toronto FC</h3>
+							<time>December 21, 2015</time>
+						</div>
 					</div>
 				</div>
 			</div><!--fecha div news-->
@@ -231,6 +247,32 @@
 			
 		</footer>
 		<script type="text/javascript" src="lib/jquery/jquery.min.js"></script>
+		<script type="text/javascript" src="lib/owl-carousel/owl.carousel.min.js"></script>
 		<script type="text/javascript" src="lib/bootstrap/js/bootstrap.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				$("#logotipo").on("mouseover", function(){
+					$("#banner h1").addClass("efeito");
+				}).on("mouseout", function(){
+					$("#banner h1").removeClass("efeito");
+				})
+
+				$("#input-search").on("focus", function(){
+					$("li.search").addClass("ativo")
+				}).on("blur", function(){
+					$("li.search").removeClass("ativo")
+				})
+
+				$(".thumbnails").owlCarousel({
+					loop:true,
+					nav:true,
+					navText:["Anterior","Próximo"],
+					responsive:{
+						
+					}
+				});
+
+			})
+		</script>
 	</body>
 </html>
